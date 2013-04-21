@@ -1,0 +1,36 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Dashboard</h2>
+
+<form action="/dash/" method="post">
+Current User: <input name="playerName" value="{{playerTagHeader}}" readonly="readonly" />
+<br>
+<input type="radio" name="page" value="friendRequest" checked="checked">Friend Request
+<br>
+<input type="radio" name="page" value="teams">Team Set-Up
+<br>
+<input type="radio" name="page" value="pendingRequest">Pending Request
+<br>
+<input type="submit" value="Load" >
+<p id=error>{{errorMatch}}</p>
+</form>
+<br>
+
+Current Friends:
+<ul>
+    {% for friend in friends %}
+        <li>{{ friend }}</li>
+    {% endfor %}
+</ul> 
+
+Team:
+<ul>
+    {% for team in teams %}
+        <li>{{ team }}</li>
+    {% endfor %}
+</ul> 
+
+<p><a href="/">Player Logout</a></p>
+{% endblock %}

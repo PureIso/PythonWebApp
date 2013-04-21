@@ -1,0 +1,24 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Pending Request</h2>
+
+<form action="/pendingRequest/" method="post">
+Current User: <input name="playerName" value="{{playerTagHeader}}" readonly="readonly" />
+<br><br>
+
+Friend Request Pending From: <select name='requestPending'>
+{% for request in FriendRequests %} 
+	<option value="{{request['FromTag']}}">{{request['FromTag']}}</option>
+{% endfor %} </select>
+</p>
+<input type="submit" name="button" value="Accept" >
+<input type="submit" name="button" value="Decline">
+<p id=error>{{errorMatch}}</p>
+<br>
+</form>
+
+<p><a href="/dash">Back</a></p>
+<p><a href="/">Player Logout</a></p>
+{% endblock %}

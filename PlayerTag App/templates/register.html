@@ -1,0 +1,25 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Register</h2>
+
+<form action="/register/" method="post">
+	<p>Enter Player Tag:</p>
+    <input type="text" name="playerTag">
+    <p id=error>{{errorPlayerTag}}</p>
+    
+    <p>Enter Password:</p>
+    <input type="password" name="password">
+    <p id=error>{{errorPassword}}</p>
+    
+    <p>Confirm Password:</p>
+    <input type="password" name="confirmPassword">
+    <p id=error>{{errorCPassword}}</p>
+    
+    <input type="submit" value="Save">
+    <p id=error>{{errorOther}}</p>
+</form>
+
+<p>Home Page <a href="/">Back</a></p>
+{% endblock %}
