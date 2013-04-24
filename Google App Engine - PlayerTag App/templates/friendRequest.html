@@ -1,0 +1,21 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Friend Request</h2>
+
+<form action="/friendRequest" method="post">
+Current User: <input name="currentUser" value="{{playerTagHeader}}" readonly="readonly" />
+<br><br>
+
+Player Tag List:<select name='tags'>
+	{% for playerTag in PlayerTags %} 
+		<option value="{{playerTag.key.urlsafe()}}">{{playerTag.tag}}</option>
+	{% endfor %} 
+</select> 
+
+<input type="submit" value="Send Request">
+<p id=error>{{errorMatch}}</p>
+</form>
+
+{% endblock %}

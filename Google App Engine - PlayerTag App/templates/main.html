@@ -1,0 +1,20 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Game System - Login</h2>
+
+<form action="/main" method="post">
+	<p>Login (Player Tag)</p>
+	<input type="text" name="playerTag">
+
+	<p>Password:</p>
+	<input type="password" name="password">
+	<p id=error>{{errorMatch}}</p>
+
+	<input type="submit" value="Login">
+</form>
+    
+<p>Register User: <a href="register">Enter</a></p>
+
+{% endblock %}

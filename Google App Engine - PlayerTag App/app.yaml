@@ -1,0 +1,60 @@
+application: c00117798-a2
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+# For files and codes
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+#Hold all stylesheets
+- url: /stylesheets
+  static_dir: stylesheets
+
+#Allow user to send an email to this address
+- url: /_ah/mail/admin@.*c00117798-a2\.appspotmail\.com
+  script: admin_mail.app
+  login: admin
+  
+- url: /register
+  script: register.app
+  login: required
+  
+- url: /friendRequest
+  script: friendRequest.app
+ 
+- url: /pendingRequest
+  script: pendingRequest.app
+  
+- url: /dash
+  script: dash.app
+  
+- url: /createnewteam
+  script: createnewteam.app
+  
+- url: /joinateam
+  script: joinateam.app
+
+- url: /manageateam
+  script: manageateam.app
+  
+- url: /teams
+  script: teams.app
+
+#Lunch the main script
+- url: .*
+  script: main.app
+
+#For libraries the application will use
+libraries:
+- name: webapp2
+  version: "2.5.1"
+- name: jinja2
+  version: latest
+
+# For mail service 
+inbound_services:
+- mail

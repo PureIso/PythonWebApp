@@ -1,0 +1,25 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Manage A Team</h2>
+
+<form action="/manageateam" method="post">
+Current User: <input name="currentUser" value="{{playerTagHeader}}" readonly="readonly" />
+Current Team: <input name="currentTeam" value="{{team}}" readonly="readonly" />
+<br>
+<br>
+List of Team Members: <select name='selectedMember'>
+{% for member in members %} 
+	<option value="{{member.key.urlsafe()}}">{{member.tag}}</option>
+{% endfor %} </select>
+<br>
+<br>
+
+<input type="submit" value="Remove" >
+<p id=error>{{errorMatch}}</p>
+
+</form>
+<br>
+
+{% endblock %}

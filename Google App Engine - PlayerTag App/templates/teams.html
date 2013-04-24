@@ -1,0 +1,27 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Team Menu</h2>
+
+<form action="/teams" method="post">
+Current User: <input name="currentUser" value="{{playerTagHeader}}" readonly="readonly" />
+<br>
+<input type="radio" name="page" value="createnewteam" checked="checked">Create a New Team
+<br>
+<input type="radio" name="page" value="joinateam">Join a Team
+<br>
+<input type="radio" name="page" value="manageteam">Manage a Team
+<br>
+<input type="submit" value="Load" >
+<p id=error>{{errorMatch}}</p>
+
+List of teams: <select name='selectedTeam'>
+{% for team in teams %} 
+	<option value="{{team.key.urlsafe()}}">{{team.teamName}}</option>
+{% endfor %} </select>
+
+</form>
+<br>
+
+{% endblock %}

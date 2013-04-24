@@ -1,0 +1,21 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Join A Team</h2>
+
+<form action="/joinateam" method="post">
+Current User: <input name="currentUser" value="{{playerTagHeader}}" readonly="readonly" />
+<br><br>
+
+List of teams: <select name='selectedTeam'>
+{% for team in teams %} 
+	<option value="{{team.key.urlsafe()}}">{{team.teamName}}</option>
+{% endfor %} </select>
+</p>
+<input type="submit" name="button" value="Join">
+<p id=error>{{errorMatch}}</p>
+<br>
+</form>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "templates/base.html" %}
+
+{% block the_body %}
+
+<h2>Team Set-Up</h2>
+
+<form action="/createnewteam" method="post">
+Current User: <input name="currentUser" value="{{playerTagHeader}}" readonly="readonly" />
+	<br>
+	NB: You will be made the administrator of this Team.
+	<br>
+	<p>Team Name:</p>
+    <input type="text" name="teamName">
+    <p>Please Confirm Team Name:</p>
+    <input type="text" name="teamNameConfirm">
+    <p id=error>{{errorTeam}}</p>
+    <input type="submit" value="Create">
+	<p id=error>{{errorMatch}}</p>
+</form>
+
+{% endblock %}
