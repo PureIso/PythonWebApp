@@ -3,6 +3,7 @@ Web Application Examples
 A collection of web application examples
 Please feel free to improve on codes.
 
+Link to python extensions: http://www.lfd.uci.edu/~gohlke/pythonlibs/#distribute
 
 TODO: Installing mongoDB
 ~~~

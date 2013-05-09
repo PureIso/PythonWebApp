@@ -31,6 +31,7 @@ from createnewteam import CreateNewTeam
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class Root(object):
+    @cherrypy.expose
     def POST(self, playerTag, password):
         template = jinja_environment.get_template('templates/main.html')
         try:
@@ -60,7 +61,7 @@ class Root(object):
                 return template.render({'the_title': 'Main',
                                         'errorMatch': 'Invalid playerTag or password'})
         
-    
+    @cherrypy.expose
     def GET(self):
         cherrypy.lib.sessions.expire()
         template = jinja_environment.get_template('templates/main.html')   

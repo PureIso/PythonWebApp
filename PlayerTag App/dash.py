@@ -80,7 +80,6 @@ class Dash(object):
                                 'teams': team})
         
     @cherrypy.expose
-    @cherrypy.tools.allow(methods=['get', 'post'])
     def index(self,playerName=None, page=None):
         playerName = cherrypy.session.get("PlayerTag")
         if(cherrypy.request.method == 'GET'):

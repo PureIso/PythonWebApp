@@ -985,3 +985,20 @@ Request Headers:
     root.friendRequest.PlayerTag = playerTagObject.GetPlayerTag()
 AttributeError: 'Root' object has no attribute 'friendRequest'
 
+[08/May/2013:11:35:05] HTTP 
+Request Headers:
+  HOST: 127.0.0.1:8080
+  DNT: 1
+  ACCEPT: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+  ACCEPT-ENCODING: gzip, deflate
+  USER-AGENT: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+  ACCEPT-LANGUAGE: en-gb,en;q=0.5
+  Remote-Addr: 127.0.0.1
+  CONNECTION: keep-alive
+[08/May/2013:11:35:05] HTTP Traceback (most recent call last):
+  File "C:\Python33\lib\site-packages\cherrypy\_cprequest.py", line 656, in respond
+    response.body = self.handler()
+  File "C:\Python33\lib\site-packages\cherrypy\_cprequest.py", line 799, in __set__
+    raise ValueError(self.unicode_err)
+ValueError: Page handlers MUST return bytes. Use tools.encode if you wish to return unicode.
+
