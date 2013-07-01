@@ -5,23 +5,13 @@ Please feel free to improve on codes.
 
 Link to python extensions: http://www.lfd.uci.edu/~gohlke/pythonlibs/#distribute
 
-TODO: Installing mongoDB
+###Getting Started##
 ~~~
-...
-~~~
-
-TODO: Installing CherryPY
-~~~
-...
+Install Google app engine , MongoDB, CherryPy and jinja2
 ~~~
 
-TODO: Installing jinja2
-~~~
-...
-~~~
-
-### Google App Engine - PlayerTag App ###
+### Google App Engine Version - PlayerTag App ###
 Uses google app engine with python, webapp2, jinja2 template and google's datastore as database
 
-### PlayerTag App ###
-Uses google app engine with python, CherryPY, jinja2 template and mongoDB as database
+### CherryPy Version- PlayerTag App ###
+Python web app using CherryPY, jinja2 template and mongoDB as database
